@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vladimir Glazatov - Applied Mathematician & ML Researcher</title>
+  <meta name="description" content="Vladimir Glazatov - applied mathematician and machine learning researcher working on finite-step SGD, stochastic optimization, dynamical systems, functional analysis and mathematical physics.">
+  <meta name="theme-color" content="#285ea8">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vladimir Glazatov - Research">
+  <meta property="og:description" content="Applied mathematics, stochastic optimization, dynamical systems and finite-step SGD.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/36891933?v=4">
+  <meta property="og:url" content="https://bard0.github.io/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vladimir Andreevich Glazatov",
+    "alternateName": "Vladimir A. Glazatov",
+    "url": "https://bard0.github.io/",
+    "image": "https://avatars.githubusercontent.com/u/36891933?v=4",
+    "jobTitle": "Applied Mathematician and Machine Learning Researcher",
+    "sameAs": [
+      "https://github.com/bard0",
+      "https://www.mathnet.ru/php/person.phtml?option_lang=eng&personid=190010",
+      "https://orcid.org/0000-0003-4580-3723"
+    ],
+    "knowsAbout": ["stochastic optimization", "stochastic gradient descent", "dynamical systems", "functional analysis", "measure theory", "operator theory"]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#top">VG <span>/ Research</span></a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#talks">Talks</a>
+      <a href="#background">Background</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="lang-btn" href="ru/" aria-label="Russian version">RU</a>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme">☾</button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-label="Open navigation" aria-expanded="false">≡</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Applied mathematics · theoretical ML</div>
+      <h1>Vladimir Glazatov</h1>
+      <p class="hero-subtitle">Applied Mathematician · Machine Learning Researcher</p>
+      <p class="hero-copy">I study stochastic optimization and dynamical systems, with a current focus on finite-step SGD, stability boundaries and gradient-noise geometry. My mathematical background includes functional analysis, measure theory, Hamiltonian systems and operator methods.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#research">Explore research</a>
+        <a class="button" href="downloads/Vladimir_Glazatov_Academic_CV.pdf">Academic CV</a>
+        <a class="button" href="https://github.com/bard0/Finite-Step-Stochastic-Dynamics-of-SGD">GitHub project</a>
+      </div>
+      <div class="hero-meta">
+        <span>6 publications</span><span>22 Math-Net citations</span><span>10 recorded talks</span>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img class="hero-photo" src="https://avatars.githubusercontent.com/u/36891933?v=4" alt="Portrait of Vladimir Glazatov" width="200" height="265">
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="research">
+  <div class="container">
+    <div class="section-kicker">Research</div>
+    <h2>Two connected research lines</h2>
+    <p class="section-intro">My current work connects stochastic optimization with tools from dynamical systems and mathematical analysis. The first line studies finite-step SGD; the second develops operator-theoretic and measure-theoretic questions in infinite-dimensional dynamics.</p>
+    <div class="research-grid">
+      <article class="card">
+        <div class="eyebrow">Current focus</div>
+        <h3>Finite-Step Stochastic Dynamics of SGD</h3>
+        <p>I study which stochastic information is required to predict the stability of finite-step stochastic gradient descent, especially near Edge-of-Stability regimes where continuous-time closures can miss discrete-step effects.</p>
+        <p>A controlled finite-sum construction shows that two SGD systems can share the same population Hessian and the same zero-order gradient-noise covariance at a reference point while having different exact finite-step second-moment stability thresholds.</p>
+        <div class="formula" aria-label="Critical learning rate formula">q = (1 - ηλ)² + η²G<sub>Σ</sub><br>η<sub>c</sub> = 2λ / (λ² + G<sub>Σ</sub>)</div>
+        <p>Here <strong>G<sub>Σ</sub></strong> captures state-dependent gradient-noise geometry. The claim is an explicit descriptor-insufficiency and stability result - not merely the observation that multiplicative noise exists.</p>
+        <div class="metrics">
+          <div class="metric"><strong>0.85</strong><span>R² for matched stability-threshold differences in controlled comparisons</span></div>
+          <div class="metric"><strong>0.98</strong><span>R² for matched sharpness-gap differences in controlled comparisons</span></div>
+        </div>
+        <div class="tags"><span class="tag">Stochastic optimization</span><span class="tag">Edge of Stability</span><span class="tag">Lyapunov stability</span><span class="tag">Noise geometry</span></div>
+        <p><a href="https://github.com/bard0/Finite-Step-Stochastic-Dynamics-of-SGD"><strong>Research repository →</strong></a></p>
+      </article>
+
+      <div class="card">
+        <div class="eyebrow">Mathematical foundations</div>
+        <h3>Infinite-Dimensional Dynamics & Mathematical Physics</h3>
+        <p>My earlier and continuing mathematical work concerns invariant measures, Hamiltonian dynamics, singular solutions and Koopman/operator representations in infinite-dimensional spaces.</p>
+        <ul class="list-clean">
+          <li><strong>Invariant measures.</strong><br><span class="note">Measures on Hilbert spaces invariant under Hamiltonian flows.</span></li>
+          <li><strong>Singular dynamics.</strong><br><span class="note">Continuation of differential-equation trajectories through singularity formation.</span></li>
+          <li><strong>Operator methods.</strong><br><span class="note">Koopman representations of infinite-dimensional Hamiltonian flows.</span></li>
+          <li><strong>Functional analysis.</strong><br><span class="note">Banach limits and finitely additive measures on L∞(R).</span></li>
+        </ul>
+        <div class="tags"><span class="tag">Functional analysis</span><span class="tag">Measure theory</span><span class="tag">Operator theory</span><span class="tag">Dynamical systems</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="publications">
+  <div class="container">
+    <div class="section-kicker">Publications</div>
+    <h2>Selected and complete research record</h2>
+    <p class="section-intro">Six publications are currently indexed on Math-Net. DOI links are provided where available.</p>
+    <div class="publications">
+      <article class="pub"><div class="pub-year">2025</div><div><div class="pub-title">Analysis of Exploding Solutions of an Infinite-Dimensional Linear Hamiltonian System in Phase Space Extensions</div><div class="pub-meta">V. A. Glazatov, V. Zh. Sakbaev · Lobachevskii Journal of Mathematics 46, 1271-1283</div><div class="pub-links"><a href="https://doi.org/10.1134/S1995080225605624">DOI</a></div></div></article>
+      <article class="pub"><div class="pub-year">2025</div><div><div class="pub-title">Continuation of Solutions of Differential Equations through the Formation of Singularities</div><div class="pub-meta">V. A. Glazatov, Yu. N. Orlov, V. Zh. Sakbaev · Lobachevskii Journal of Mathematics 46, 2513-2531</div><div class="pub-links"><a href="https://doi.org/10.1134/S1995080225608070">DOI</a></div></div></article>
+      <article class="pub"><div class="pub-year">2025</div><div><div class="pub-title">Динамика нелинейных волновых систем, допускающая формирование особенностей</div><div class="pub-meta">В. А. Глазатов, В. Ж. Сакбаев · Известия вузов. Радиофизика 68:5/6, 496-504</div><div class="pub-links"><a href="https://doi.org/10.52452/00213462_2025_68_05_496">DOI</a></div></div></article>
+      <article class="pub"><div class="pub-year">2024</div><div><div class="pub-title">Measure of the Banach Limit on L∞(R)</div><div class="pub-meta">V. A. Glazatov · Lobachevskii Journal of Mathematics 45, 2495-2501</div><div class="pub-links"><a href="https://doi.org/10.1134/S1995080224603138">DOI</a></div></div></article>
+      <article class="pub"><div class="pub-year">2022</div><div><div class="pub-title">Меры на гильбертовом пространстве, инвариантные относительно гамильтоновых потоков</div><div class="pub-meta">В. А. Глазатов, В. Ж. Сакбаев · Уфимский математический журнал 14:2, 3-22</div><div class="pub-links"><a href="https://doi.org/10.13108/2022-14-2-3">DOI</a></div></div></article>
+      <article class="pub"><div class="pub-year">2022</div><div><div class="pub-title">О купмановском представлении гамильтоновых потоков в бесконечномерных пространствах с инвариантной мерой</div><div class="pub-meta">В. А. Глазатов, В. Ж. Сакбаев · Препринты ИПМ им. М. В. Келдыша, №99, 15 с.</div><div class="pub-links"><a href="https://www.mathnet.ru/php/person.phtml?option_lang=eng&personid=190010">Math-Net record</a></div></div></article>
+    </div>
+    <p><a class="button" href="https://www.mathnet.ru/php/person.phtml?option_lang=eng&personid=190010">Full Math-Net profile</a></p>
+  </div>
+</section>
+
+<section class="section alt" id="talks">
+  <div class="container">
+    <div class="section-kicker">Talks</div>
+    <h2>Selected talks</h2>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-date">May 2026</div><div class="timeline-content"><h3>Continuation of solutions of an infinite-dimensional hyperbolic oscillator</h3><p>Conference “Function Theory, Operator Theory and Quantum Information Theory”.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">Apr 2026</div><div class="timeline-content"><h3>Infinite-dimensional Hamiltonian systems with invariant measure</h3><p>Quantum Mathematical Physics Seminar.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">Jan 2025</div><div class="timeline-content"><h3>Banach measure and its applications</h3><p>International Conference on Infinite-Dimensional Analysis and Mathematical Physics (IDAMPh 2025).</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">Jun 2024</div><div class="timeline-content"><h3>Measure of the Banach limit on L∞(R)</h3><p>International Conference “Function Theory, Operator Theory and Quantum Information Theory”.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">Jul 2023</div><div class="timeline-content"><h3>Koopman representation of Hamiltonian flows in infinitely dimensional spaces with invariant measures</h3><p>International Conference on Mathematical Physics, Dynamical Systems and Infinite-Dimensional Analysis.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="background">
+  <div class="container">
+    <div class="section-kicker">Background</div>
+    <h2>Mathematics first, machine learning next</h2>
+    <div class="research-grid">
+      <div class="card">
+        <h3>Education</h3>
+        <ul class="list-clean">
+          <li><strong>MIPT (Phystech), PhD studies</strong><br><span class="note">Real, complex and functional analysis · 2022-2026</span></li>
+          <li><strong>Lobachevsky University, MSc with honors</strong><br><span class="note">Fundamental mathematics and applications · 2020-2022</span></li>
+          <li><strong>Lobachevsky University, BSc</strong><br><span class="note">Applied mathematics and computer science · 2016-2020</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Research experience</h3>
+        <ul class="list-clean">
+          <li><strong>Keldysh Institute of Applied Mathematics RAS</strong><br><span class="note">Research engineer · 2023-2026</span></li>
+          <li><strong>MIPT Correspondence School</strong><br><span class="note">Instructor · mathematics, physics and computer science · 2023-2026</span></li>
+        </ul>
+        <h3 style="margin-top:1.4rem">Methods & tools</h3>
+        <div class="chips"><span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">C++</span><span class="chip">NumPy/SciPy</span><span class="chip">CUDA/GPU workflows</span><span class="chip">Git</span><span class="chip">LaTeX</span><span class="chip">Spectral analysis</span><span class="chip">Stochastic processes</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="cv">
+  <div class="container">
+    <div class="section-kicker">Curriculum vitae</div>
+    <h2>Three versions for different contexts</h2>
+    <div class="cv-grid">
+      <article class="card cv-card"><h3>Academic CV</h3><p>Balanced profile covering mathematical research, publications and the current SGD program.</p><a class="button" href="downloads/Vladimir_Glazatov_Academic_CV.pdf">Download PDF</a></article>
+      <article class="card cv-card"><h3>Theoretical ML</h3><p>Focused on stochastic optimization, finite-step dynamics, computational validation and research engineering.</p><a class="button" href="downloads/Vladimir_Glazatov_Theoretical_ML_CV.pdf">Download PDF</a></article>
+      <article class="card cv-card"><h3>Mathematics</h3><p>Focused on functional analysis, mathematical physics, operator theory and the complete publication record.</p><a class="button" href="downloads/Vladimir_Glazatov_Mathematics_CV.pdf">Download PDF</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="section-kicker">Contact</div>
+      <h2>Research conversations are welcome</h2>
+      <p class="section-intro">I am interested in collaborations around stochastic optimization, optimization dynamics, mathematical ML, dynamical systems and operator methods.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:glazv96@yandex.ru"><span>Email</span><span>glazv96@yandex.ru ↗</span></a>
+      <a href="https://t.me/bard0nian"><span>Telegram</span><span>@bard0nian ↗</span></a>
+      <a href="https://github.com/bard0"><span>GitHub</span><span>@bard0 ↗</span></a>
+      <a href="https://orcid.org/0000-0003-4580-3723"><span>ORCID</span><span>0000-0003-4580-3723 ↗</span></a>
+      <a href="https://www.mathnet.ru/php/person.phtml?option_lang=eng&personid=190010"><span>Math-Net</span><span>profile ↗</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row"><span>© 2026 Vladimir Glazatov</span><span>Static site · GitHub Pages · no tracking</span></div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
