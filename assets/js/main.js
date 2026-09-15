@@ -34,4 +34,19 @@
     navLinks.classList.remove('open');
     menuBtn?.setAttribute('aria-expanded', 'false');
   }));
+
+  const cvRoutes = {
+    'Vladimir_Glazatov_Academic_CV.pdf': '/cv/academic/',
+    'Vladimir_Glazatov_Theoretical_ML_CV.pdf': '/cv/theoretical-ml/',
+    'Vladimir_Glazatov_Mathematics_CV.pdf': '/cv/mathematics/'
+  };
+  document.querySelectorAll('a[href]').forEach(a => {
+    for (const [name, route] of Object.entries(cvRoutes)) {
+      if (a.getAttribute('href')?.endsWith(name)) {
+        a.setAttribute('href', route);
+        if (/download/i.test(a.textContent)) a.textContent = 'Open CV';
+        if (/скачать/i.test(a.textContent)) a.textContent = 'Открыть CV';
+      }
+    }
+  });
 })();
