@@ -18,8 +18,8 @@
       for (let i = 0; i < binary.length; i += 1) bytes[i] = binary.charCodeAt(i);
       heroPhoto.src = URL.createObjectURL(new Blob([bytes], { type: 'image/jpeg' }));
       heroPhoto.width = 320;
-      heroPhoto.height = 400;
-      heroPhoto.style.aspectRatio = '4 / 5';
+      heroPhoto.height = 320;
+      heroPhoto.style.aspectRatio = '1 / 1';
     }).catch(() => { heroPhoto.src = 'https://avatars.githubusercontent.com/u/36891933?v=4'; });
   }
 
