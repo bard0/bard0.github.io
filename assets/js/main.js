@@ -7,12 +7,34 @@
   const heroPhoto = document.querySelector('.hero-photo');
 
   if (heroPhoto) {
-    heroPhoto.src = isRu ? '../assets/img/profile-hero-v2.jpg?v=2' : 'assets/img/profile-hero-v2.jpg?v=2';
-    heroPhoto.style.aspectRatio = '4 / 5';
-    heroPhoto.onerror = () => {
-      heroPhoto.onerror = null;
-      heroPhoto.src = 'https://avatars.githubusercontent.com/u/36891933?v=4';
-    };
+    const assetBase = isRu ? '../assets/img/hero-hq/' : 'assets/img/hero-hq/';
+    const portraitParts = Array.from(
+      { length: 6 },
+      (_, i) => `${assetBase}part${String(i).padStart(2, '0')}.b64`
+    );
+
+    Promise.all(
+      portraitParts.map(path =>
+        fetch(path, { cache: 'force-cache' }).then(response => {
+          if (!response.ok) throw new Error(`Portrait asset failed: ${path}`);
+          return response.text();
+        })
+      )
+    )
+      .then(chunks => {
+        const binary = atob(chunks.map(chunk => chunk.trim()).join(''));
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i += 1) {
+          bytes[i] = binary.charCodeAt(i);
+        }
+        heroPhoto.src = URL.createObjectURL(new Blob([bytes], { type: 'image/webp' }));
+        heroPhoto.width = 600;
+        heroPhoto.height = 750;
+        heroPhoto.style.aspectRatio = '4 / 5';
+      })
+      .catch(() => {
+        heroPhoto.src = 'https://avatars.githubusercontent.com/u/36891933?v=4';
+      });
   }
 
   const stored = localStorage.getItem('vg-theme');
