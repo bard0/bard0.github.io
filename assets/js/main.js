@@ -7,8 +7,12 @@
   const heroPhoto = document.querySelector('.hero-photo');
 
   if (heroPhoto) {
-    heroPhoto.src = isRu ? '../assets/img/profile-hero.webp' : 'assets/img/profile-hero.webp';
+    heroPhoto.src = isRu ? '../assets/img/profile-hero-v2.jpg?v=2' : 'assets/img/profile-hero-v2.jpg?v=2';
     heroPhoto.style.aspectRatio = '4 / 5';
+    heroPhoto.onerror = () => {
+      heroPhoto.onerror = null;
+      heroPhoto.src = 'https://avatars.githubusercontent.com/u/36891933?v=4';
+    };
   }
 
   const stored = localStorage.getItem('vg-theme');
