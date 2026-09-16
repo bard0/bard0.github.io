@@ -3,6 +3,7 @@
   const themeBtn = document.querySelector('[data-theme-toggle]');
   const menuBtn = document.querySelector('[data-menu-toggle]');
   const navLinks = document.querySelector('.nav-links');
+  const isRu = (root.lang || '').toLowerCase().startsWith('ru');
 
   const stored = localStorage.getItem('vg-theme');
   if (stored === 'light' || stored === 'dark') {
@@ -15,7 +16,10 @@
     if (!themeBtn) return;
     const isDark = root.dataset.theme === 'dark';
     themeBtn.textContent = isDark ? '☀' : '☾';
-    themeBtn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    const label = isRu
+      ? (isDark ? 'Переключить на светлую тему' : 'Переключить на тёмную тему')
+      : (isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    themeBtn.setAttribute('aria-label', label);
   };
   updateThemeLabel();
 
@@ -28,11 +32,15 @@
   menuBtn?.addEventListener('click', () => {
     const open = navLinks?.classList.toggle('open');
     menuBtn.setAttribute('aria-expanded', String(Boolean(open)));
+    menuBtn.setAttribute('aria-label', isRu
+      ? (open ? 'Закрыть меню' : 'Открыть меню')
+      : (open ? 'Close navigation' : 'Open navigation'));
   });
 
   navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     navLinks.classList.remove('open');
     menuBtn?.setAttribute('aria-expanded', 'false');
+    menuBtn?.setAttribute('aria-label', isRu ? 'Открыть меню' : 'Open navigation');
   }));
 
   const cvRoutes = {
