@@ -8,54 +8,77 @@
 
   if (heroPhoto) {
     const assetBase = isRu ? '../assets/img/profile-v8/' : 'assets/img/profile-v8/';
-    const portraitParts = [
-      'part0.b64',
-      'part1.b64',
-      'part2.b64',
-      'part3a.b64',
-      'part3b.b64',
-      'part4a.b64',
-      'part4b.b64'
-    ].map(name => `${assetBase}${name}`);
+    const portraitParts = ['part0.b64','part1.b64','part2.b64','part3a.b64','part3b.b64','part4a.b64','part4b.b64'].map(name => `${assetBase}${name}`);
+    Promise.all(portraitParts.map(path => fetch(path, { cache: 'force-cache' }).then(response => {
+      if (!response.ok) throw new Error(`Portrait asset failed: ${path}`);
+      return response.text();
+    }))).then(chunks => {
+      const binary = atob(chunks.map(chunk => chunk.trim()).join(''));
+      const bytes = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i += 1) bytes[i] = binary.charCodeAt(i);
+      heroPhoto.src = URL.createObjectURL(new Blob([bytes], { type: 'image/jpeg' }));
+      heroPhoto.width = 320;
+      heroPhoto.height = 400;
+      heroPhoto.style.aspectRatio = '4 / 5';
+    }).catch(() => { heroPhoto.src = 'https://avatars.githubusercontent.com/u/36891933?v=4'; });
+  }
 
-    Promise.all(
-      portraitParts.map(path =>
-        fetch(path, { cache: 'force-cache' }).then(response => {
-          if (!response.ok) throw new Error(`Portrait asset failed: ${path}`);
-          return response.text();
-        })
-      )
-    )
-      .then(chunks => {
-        const binary = atob(chunks.map(chunk => chunk.trim()).join(''));
-        const bytes = new Uint8Array(binary.length);
-        for (let i = 0; i < binary.length; i += 1) {
-          bytes[i] = binary.charCodeAt(i);
-        }
-        heroPhoto.src = URL.createObjectURL(new Blob([bytes], { type: 'image/jpeg' }));
-        heroPhoto.width = 320;
-        heroPhoto.height = 400;
-        heroPhoto.style.aspectRatio = '4 / 5';
-      })
-      .catch(() => {
-        heroPhoto.src = 'https://avatars.githubusercontent.com/u/36891933?v=4';
-      });
+  document.querySelectorAll('.hero-meta span').forEach(item => {
+    const text = item.textContent.trim().toLowerCase();
+    if (text.includes('math-net citations') || text.includes('цитирования math-net')) item.remove();
+  });
+
+  const publicationKey = publication => {
+    const doiLink = publication.querySelector('a[href*="doi.org/"]');
+    if (doiLink) {
+      try {
+        const doi = new URL(doiLink.href).pathname.replace(/^\//, '').toLowerCase();
+        return `doi:${doi}`;
+      } catch (_) { return null; }
+    }
+    const title = publication.querySelector('.pub-title')?.textContent.trim().toLowerCase() || '';
+    return title.includes('купмановском представлении гамильтоновых потоков') ? 'keldysh-2022-99' : null;
+  };
+
+  const citationTargets = [];
+  document.querySelectorAll('.pub').forEach(publication => {
+    const key = publicationKey(publication);
+    const links = publication.querySelector('.pub-links');
+    if (!key || !links) return;
+    const badge = document.createElement('a');
+    badge.className = 'citation-count';
+    badge.hidden = true;
+    badge.target = '_blank';
+    badge.rel = 'noopener noreferrer';
+    badge.dataset.citationKey = key;
+    links.appendChild(badge);
+    citationTargets.push(badge);
+  });
+
+  if (citationTargets.length) {
+    const citationDataPath = isRu ? '../assets/data/citations.json' : 'assets/data/citations.json';
+    fetch(citationDataPath, { cache: 'no-cache' })
+      .then(response => { if (!response.ok) throw new Error('Citation data unavailable'); return response.json(); })
+      .then(data => citationTargets.forEach(badge => {
+        const entry = data?.works?.[badge.dataset.citationKey];
+        if (!entry || !Number.isInteger(entry.count)) return;
+        badge.textContent = isRu ? `${entry.count} цит. · OpenAlex` : `${entry.count} ${entry.count === 1 ? 'citation' : 'citations'} · OpenAlex`;
+        badge.href = entry.openalex_url || 'https://openalex.org/';
+        badge.title = data.updated_at ? `${isRu ? 'Данные OpenAlex, обновлено' : 'OpenAlex data, updated'} ${data.updated_at.slice(0, 10)}` : 'OpenAlex';
+        badge.hidden = false;
+      }))
+      .catch(() => {});
   }
 
   const stored = localStorage.getItem('vg-theme');
-  if (stored === 'light' || stored === 'dark') {
-    root.dataset.theme = stored;
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    root.dataset.theme = 'dark';
-  }
+  if (stored === 'light' || stored === 'dark') root.dataset.theme = stored;
+  else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) root.dataset.theme = 'dark';
 
   const updateThemeLabel = () => {
     if (!themeBtn) return;
     const isDark = root.dataset.theme === 'dark';
     themeBtn.textContent = isDark ? '☀' : '☾';
-    const label = isRu
-      ? (isDark ? 'Переключить на светлую тему' : 'Переключить на тёмную тему')
-      : (isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    const label = isRu ? (isDark ? 'Переключить на светлую тему' : 'Переключить на тёмную тему') : (isDark ? 'Switch to light theme' : 'Switch to dark theme');
     themeBtn.setAttribute('aria-label', label);
   };
   updateThemeLabel();
@@ -69,9 +92,7 @@
   menuBtn?.addEventListener('click', () => {
     const open = navLinks?.classList.toggle('open');
     menuBtn.setAttribute('aria-expanded', String(Boolean(open)));
-    menuBtn.setAttribute('aria-label', isRu
-      ? (open ? 'Закрыть меню' : 'Открыть меню')
-      : (open ? 'Close navigation' : 'Open navigation'));
+    menuBtn.setAttribute('aria-label', isRu ? (open ? 'Закрыть меню' : 'Открыть меню') : (open ? 'Close navigation' : 'Open navigation'));
   });
 
   navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
