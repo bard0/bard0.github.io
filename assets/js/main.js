@@ -8,10 +8,15 @@
 
   if (heroPhoto) {
     const assetBase = isRu ? '../assets/img/hero-hq/' : 'assets/img/hero-hq/';
-    const portraitParts = Array.from(
-      { length: 6 },
-      (_, i) => `${assetBase}part${String(i).padStart(2, '0')}.b64`
-    );
+    const portraitParts = [
+      'part00.b64',
+      'part01.b64',
+      'part02.b64',
+      'part03.b64',
+      'part04.b64',
+      'part05a.b64',
+      'part05b.b64'
+    ].map(name => `${assetBase}${name}`);
 
     Promise.all(
       portraitParts.map(path =>
