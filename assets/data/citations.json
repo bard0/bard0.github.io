@@ -1,5 +1,42 @@
 {
   "source": "OpenAlex",
-  "updated_at": null,
-  "works": {}
+  "updated_at": "2026-09-16T13:12:16Z",
+  "works": {
+    "doi:10.1134/s1995080224603138": {
+      "count": 4,
+      "openalex_id": "https://openalex.org/W4403065674",
+      "openalex_url": "https://openalex.org/W4403065674",
+      "title": "Measure of the Banach Limit on $$\\boldsymbol{L}_{\\boldsymbol{\\infty}}\\boldsymbol{(\\mathbb{R})}$$"
+    },
+    "doi:10.1134/s1995080225605624": {
+      "count": 2,
+      "openalex_id": "https://openalex.org/W4412403363",
+      "openalex_url": "https://openalex.org/W4412403363",
+      "title": "Analysis of Exploding Solutions of an Infinite-Dimensional Linear Hamiltonian System in Phase Space Extensions"
+    },
+    "doi:10.1134/s1995080225608070": {
+      "count": 1,
+      "openalex_id": "https://openalex.org/W4415290948",
+      "openalex_url": "https://openalex.org/W4415290948",
+      "title": "Continuation of Solutions of Differential Equations through the Formation of Singularities"
+    },
+    "doi:10.13108/2022-14-2-3": {
+      "count": 12,
+      "openalex_id": "https://openalex.org/W4391552864",
+      "openalex_url": "https://openalex.org/W4391552864",
+      "title": "Measures on Hilbert space invariant with respect to Hamiltonian flows"
+    },
+    "doi:10.52452/00213462_2025_68_05_496": {
+      "count": null,
+      "openalex_id": null,
+      "openalex_url": null,
+      "title": null
+    },
+    "keldysh-2022-99": {
+      "count": null,
+      "openalex_id": null,
+      "openalex_url": null,
+      "title": "О купмановском представлении гамильтоновых потоков в бесконечномерных пространствах с инвариантной мерой"
+    }
+  }
 }
