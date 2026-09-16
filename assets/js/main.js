@@ -28,6 +28,14 @@
     if (text.includes('math-net citations') || text.includes('цитирования math-net')) item.remove();
   });
 
+  const skills = document.querySelector('#background .chips');
+  if (skills && ![...skills.querySelectorAll('.chip')].some(chip => /llm/i.test(chip.textContent))) {
+    const agentSkill = document.createElement('span');
+    agentSkill.className = 'chip';
+    agentSkill.textContent = isRu ? 'LLM-агенты / агентные рабочие процессы' : 'LLM agents / agentic workflows';
+    skills.appendChild(agentSkill);
+  }
+
   const publicationKey = publication => {
     const doiLink = publication.querySelector('a[href*="doi.org/"]');
     if (doiLink) {
