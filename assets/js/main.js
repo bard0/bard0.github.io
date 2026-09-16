@@ -4,6 +4,12 @@
   const menuBtn = document.querySelector('[data-menu-toggle]');
   const navLinks = document.querySelector('.nav-links');
   const isRu = (root.lang || '').toLowerCase().startsWith('ru');
+  const heroPhoto = document.querySelector('.hero-photo');
+
+  if (heroPhoto) {
+    heroPhoto.src = isRu ? '../assets/img/profile-hero.webp' : 'assets/img/profile-hero.webp';
+    heroPhoto.style.aspectRatio = '4 / 5';
+  }
 
   const stored = localStorage.getItem('vg-theme');
   if (stored === 'light' || stored === 'dark') {
