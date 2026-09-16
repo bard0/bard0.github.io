@@ -7,15 +7,15 @@
   const heroPhoto = document.querySelector('.hero-photo');
 
   if (heroPhoto) {
-    const assetBase = isRu ? '../assets/img/hero-hq/' : 'assets/img/hero-hq/';
+    const assetBase = isRu ? '../assets/img/profile-v8/' : 'assets/img/profile-v8/';
     const portraitParts = [
-      'part00.b64',
-      'part01.b64',
-      'part02.b64',
-      'part03.b64',
-      'part04.b64',
-      'part05a.b64',
-      'part05b.b64'
+      'part0.b64',
+      'part1.b64',
+      'part2.b64',
+      'part3a.b64',
+      'part3b.b64',
+      'part4a.b64',
+      'part4b.b64'
     ].map(name => `${assetBase}${name}`);
 
     Promise.all(
@@ -32,9 +32,9 @@
         for (let i = 0; i < binary.length; i += 1) {
           bytes[i] = binary.charCodeAt(i);
         }
-        heroPhoto.src = URL.createObjectURL(new Blob([bytes], { type: 'image/webp' }));
-        heroPhoto.width = 600;
-        heroPhoto.height = 750;
+        heroPhoto.src = URL.createObjectURL(new Blob([bytes], { type: 'image/jpeg' }));
+        heroPhoto.width = 320;
+        heroPhoto.height = 400;
         heroPhoto.style.aspectRatio = '4 / 5';
       })
       .catch(() => {
