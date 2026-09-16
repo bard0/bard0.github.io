@@ -37,7 +37,9 @@
       } catch (_) { return null; }
     }
     const title = publication.querySelector('.pub-title')?.textContent.trim().toLowerCase() || '';
-    return title.includes('купмановском представлении гамильтоновых потоков') ? 'keldysh-2022-99' : null;
+    return title.includes('купмановском представлении гамильтоновых потоков')
+      ? 'doi:10.20948/prepr-2022-99'
+      : null;
   };
 
   const citationTargets = [];
