@@ -1,6 +1,6 @@
 {
   "source": "OpenAlex",
-  "updated_at": "2026-09-16T13:12:16Z",
+  "updated_at": "2026-09-16T13:15:06Z",
   "works": {
     "doi:10.1134/s1995080224603138": {
       "count": 4,
@@ -26,17 +26,17 @@
       "openalex_url": "https://openalex.org/W4391552864",
       "title": "Measures on Hilbert space invariant with respect to Hamiltonian flows"
     },
-    "doi:10.52452/00213462_2025_68_05_496": {
-      "count": null,
-      "openalex_id": null,
-      "openalex_url": null,
-      "title": null
+    "doi:10.20948/prepr-2022-99": {
+      "count": 1,
+      "openalex_id": "https://openalex.org/W4317854599",
+      "openalex_url": "https://openalex.org/W4317854599",
+      "title": "On the Koopman representation of Hamiltonian flows in infinite dimensional spaces with invariant measure"
     },
-    "keldysh-2022-99": {
-      "count": null,
-      "openalex_id": null,
-      "openalex_url": null,
-      "title": "О купмановском представлении гамильтоновых потоков в бесконечномерных пространствах с инвариантной мерой"
+    "doi:10.52452/00213462_2025_68_05_496": {
+      "count": 2,
+      "openalex_id": "https://openalex.org/W4413008021",
+      "openalex_url": "https://openalex.org/W4413008021",
+      "title": "DYNAMICS OF NONLINEAR WAVE SYSTEMS ADMITTING SINGULARITY FORMATION"
     }
   }
 }
