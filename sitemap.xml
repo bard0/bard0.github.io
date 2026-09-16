@@ -2,4 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://bard0.github.io/</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://bard0.github.io/ru/</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://bard0.github.io/cv/academic/</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://bard0.github.io/cv/theoretical-ml/</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://bard0.github.io/cv/mathematics/</loc><changefreq>monthly</changefreq></url>
 </urlset>
