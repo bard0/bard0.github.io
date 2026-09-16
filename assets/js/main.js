@@ -28,6 +28,14 @@
     if (text.includes('math-net citations') || text.includes('цитирования math-net')) item.remove();
   });
 
+  const tools = document.querySelector('#background .chips');
+  if (tools && !Array.from(tools.children).some(item => /llm/i.test(item.textContent))) {
+    const skill = document.createElement('span');
+    skill.className = 'chip';
+    skill.textContent = isRu ? 'LLM-агенты' : 'LLM agents';
+    tools.appendChild(skill);
+  }
+
   const publicationKey = publication => {
     const doiLink = publication.querySelector('a[href*="doi.org/"]');
     if (doiLink) {
