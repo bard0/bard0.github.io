@@ -96,7 +96,7 @@ html[data-theme="dark"] .button.primary { color: #08111e; }
   border-radius: 38px; background: var(--accent-soft); transform: rotate(4deg); z-index: -1;
 }
 .hero-photo {
-  display: block; width: min(290px, 72vw); aspect-ratio: 200 / 265; object-fit: cover;
+  display: block; width: min(290px, 72vw); aspect-ratio: 1 / 1; object-fit: cover;
   border-radius: 34px; border: 1px solid var(--border); box-shadow: var(--shadow);
 }
 .hero-meta { display: flex; flex-wrap: wrap; gap: .55rem 1rem; margin-top: 1.4rem; color: var(--muted); font-size: .93rem; }
