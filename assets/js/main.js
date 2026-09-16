@@ -8,6 +8,7 @@
 
   if (heroPhoto) {
     heroPhoto.src = isRu ? '../assets/img/profile-hero.webp' : 'assets/img/profile-hero.webp';
+    heroPhoto.style.aspectRatio = '4 / 5';
   }
 
   const stored = localStorage.getItem('vg-theme');
