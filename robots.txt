@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://bard0.github.io/sitemap.xml
