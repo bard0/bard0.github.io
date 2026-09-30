@@ -58,10 +58,7 @@ def request_json(path: str, params: dict) -> dict:
     url = f"{API}{path}?{urllib.parse.urlencode(query)}"
     req = urllib.request.Request(
         url,
-        headers={
-            "Accept": "application/json",
-            "User-Agent": f"bard0.github.io citation updater ({EMAIL})",
-        },
+        headers={"Accept": "application/json"},
     )
     with urllib.request.urlopen(req, timeout=30) as response:
         return json.load(response)
