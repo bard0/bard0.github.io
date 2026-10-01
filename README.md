@@ -4,7 +4,7 @@ Personal research website of Vladimir Glazatov, applied mathematician and machin
 
 Live site: https://bard0.github.io/
 
-Research topics include finite-step stochastic gradient descent, spectral reliability for data-driven dynamical systems, infinite-dimensional Hamiltonian dynamics, functional analysis, measure theory, operator methods and mathematical physics.
+Research topics include finite-step stochastic gradient descent, spectral reliability for data-driven dynamical systems, infinite-dimensional Hamiltonian dynamics, functional analysis, measure theory, operator methods and mathematical physics. Current research interests also include latent brain-state modelling, nonstationary neural dynamics and adaptive control for neural interfaces.
 
 The site is available in English and Russian and includes publications, selected talks, project pages, a dedicated PhD research page, background information and web CVs.
 
