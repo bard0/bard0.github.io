@@ -1,6 +1,6 @@
 {
   "source": "OpenAlex",
-  "updated_at": "2026-11-04T13:01:35Z",
+  "updated_at": "2026-11-08T11:57:49Z",
   "works": {
     "doi:10.1134/s1995080224603138": {
       "count": 5,
@@ -15,13 +15,13 @@
       "title": "Analysis of Exploding Solutions of an Infinite-Dimensional Linear Hamiltonian System in Phase Space Extensions"
     },
     "doi:10.1134/s1995080225608070": {
-      "count": 1,
+      "count": 2,
       "openalex_id": "https://openalex.org/W4415290948",
       "openalex_url": "https://openalex.org/W4415290948",
       "title": "Continuation of Solutions of Differential Equations through the Formation of Singularities"
     },
     "doi:10.13108/2022-14-2-3": {
-      "count": 13,
+      "count": 14,
       "openalex_id": "https://openalex.org/W4391552864",
       "openalex_url": "https://openalex.org/W4391552864",
       "title": "Measures on Hilbert space invariant with respect to Hamiltonian flows"
