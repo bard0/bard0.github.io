@@ -1,6 +1,6 @@
 {
   "source": "OpenAlex",
-  "updated_at": "2026-11-08T11:57:49Z",
+  "updated_at": "2026-11-17T14:29:27Z",
   "works": {
     "doi:10.1134/s1995080224603138": {
       "count": 5,
@@ -21,7 +21,7 @@
       "title": "Continuation of Solutions of Differential Equations through the Formation of Singularities"
     },
     "doi:10.13108/2022-14-2-3": {
-      "count": 14,
+      "count": 15,
       "openalex_id": "https://openalex.org/W4391552864",
       "openalex_url": "https://openalex.org/W4391552864",
       "title": "Measures on Hilbert space invariant with respect to Hamiltonian flows"
